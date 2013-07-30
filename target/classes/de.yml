@@ -1,0 +1,11 @@
+# ~bam.yt~ Author: FR34KYN01535 
+# German languagefile -- Translator: FR34KYN01535
+name: German
+lname: Deutsch
+translation:
+  COMMAND_MANAGER_UNKNOWN_COMMAND : "Unbekannter Befehl. Tippe \"/br help\" für Hilfe."
+  COMMAND_MANAGER_NO_PERMISSION : "Dazu fehlt dir die Berechtigung:"
+  COMMAND_MANAGER_INVALID_PARAMETER: "Ungültiger Parameter Tippe \"/br help\" für Hilfe."
+  COMMAND_MANAGER_ONLY_CHAT : "Dieser Befehl ist nicht in der Konsole verfügbar"
+  COMMAND_ABOUT_HELP  : "Credits"
+  COMMAND_HELP_HELP : "Zeigt alle Befehle" 
