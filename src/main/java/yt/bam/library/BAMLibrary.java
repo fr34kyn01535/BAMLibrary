@@ -50,18 +50,18 @@ public class BAMLibrary {
                 // Failed to submit the stats :-(
             }
         }
-        if(enableUpdateNotification && Configuration.getBoolean("check-for-updates", false)){
+        if(enableUpdateNotification && Configuration.getBoolean("check-for-updates", true)){
             try{
                 String latestVersion = null;
                 String updateUrl = null;
                         
-                Scanner sc = new Scanner(new URL("http://radio.bam.yt/version.php?plugin="+Plugin.getName()).openStream(), "UTF-8");
-                latestVersion = sc.useDelimiter("\\A").next();
-                updateUrl = sc.useDelimiter("\\A").next();
+                Scanner sc = new Scanner(new URL("http://dev.bam.yt/version.php?plugin="+Plugin.getName()).openStream(), "UTF-8");
+                latestVersion = sc.useDelimiter(";").next();
+                updateUrl = sc.useDelimiter(";").next();
                 
                 if(latestVersion!=null && !latestVersion.isEmpty() && updateUrl!=null && !updateUrl.isEmpty()){
-                    int lVersion = Integer.parseInt(latestVersion.replace(".", "").replace("v", ""));
-                    int cVersion = Integer.parseInt(plugin.getDescription().getVersion().replace(".", "").replace("v", ""));
+                    int lVersion = Integer.parseInt(ensure3Digits(latestVersion.replace(".", "").replace("v", "")));
+                    int cVersion = Integer.parseInt(ensure3Digits(plugin.getDescription().getVersion().replace(".", "").replace("v", "")));
 
                     if(lVersion>cVersion){
                         plugin.getLogger().info("A new version "+latestVersion+" is available!");
@@ -74,6 +74,12 @@ public class BAMLibrary {
         }
     }
 
+    public String ensure3Digits(String in){
+        if(in.length()==3) return in.substring(0,2);
+        if(in.length()==2) return in+"0";
+        if(in.length()==1) return in+"00";
+        return "000";
+    }
         
     public void onEnable() {
         Command.onEnable();
