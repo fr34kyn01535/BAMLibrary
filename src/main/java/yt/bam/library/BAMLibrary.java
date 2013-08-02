@@ -75,7 +75,7 @@ public class BAMLibrary {
     }
 
     public String ensure3Digits(String in){
-        if(in.length()==3) return in.substring(0,2);
+        if(in.length()==3) return in;
         if(in.length()==2) return in+"0";
         if(in.length()==1) return in+"00";
         return "000";

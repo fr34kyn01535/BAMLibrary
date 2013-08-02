@@ -16,6 +16,7 @@ public class CmdHelp implements ICommand{
         public static final Logger logger = Bukkit.getLogger();
 	@Override
 	public void execute(CommandSender sender, String commandLabel, String[] args) {
+            sender.sendMessage(ChatColor.BOLD+""+ChatColor.GREEN+"#####################################################");
             sender.sendMessage(ChatColor.BOLD+""+ChatColor.GREEN+BAMLibrary.Plugin.getName()+" "+BAMLibrary.Plugin.getDescription().getVersion()+" by "+BAMLibrary.Plugin.getDescription().getAuthors());
             for(ICommand cmd : BAMLibrary.Instance.Commands){
                 if(cmd.getPermissions() == null || sender.hasPermission(cmd.getPermissions())){
@@ -25,6 +26,7 @@ public class CmdHelp implements ICommand{
                     //}
                 }
             }
+            sender.sendMessage(ChatColor.BOLD+""+ChatColor.GREEN+"#####################################################");
         }
 
 	@Override

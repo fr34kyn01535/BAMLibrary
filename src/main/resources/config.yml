@@ -1,0 +1,12 @@
+# ~bam.yt~ Author: FR34KYN01535 
+# Configuration
+
+#Search for updates and alert if there are new
+check-for-updates: true
+
+#Enable Metrics and help the developers :)
+enable-metrics: true
+
+# Default language is english if empty or "en". 
+# To switch language put in the name of the languagefile (e.g. "de" for de.yml)
+language: "en"

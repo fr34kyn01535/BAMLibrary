@@ -18,7 +18,7 @@ public class CmdAbout implements ICommand{
 	@Override
 	public void execute(CommandSender sender, String commandLabel, String[] args) {
             Helpers.sendMessage(sender, ChatColor.GREEN + BAMLibrary.Plugin.getName()+" "+ChatColor.WHITE +BAMLibrary.Instance.Translation.getTranslation("COMMAND_ABOUT_BY")+ChatColor.GREEN +" "+BAMLibrary.Plugin.getDescription().getAuthors());
-            Helpers.sendMessage(sender, ChatColor.GREEN + "Proudly presenting "+ChatColor.WHITE +ChatColor.GREEN +" BAMcraft (bam.yt)");
+            Helpers.sendMessage(sender, ChatColor.GREEN + "Proudly presenting BAMcraft (bam.yt)");
         }
 
 	@Override
